@@ -22,22 +22,26 @@ export const metadata: Metadata = {
   description: "Specializing in high-performance React and Next.js applications. Transforming complex requirements into elegant, interactive frontend solutions.",
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${spaceGrotesk.variable} ${inter.variable} bg-transparent font-body-md text-on-surface selection:bg-primary-container selection:text-white antialiased`}>
-        <ScrollProgress />
-        <CustomCursor />
-        <NoiseOverlay />
-        <BackgroundOrbs />
-        <SmoothScroll>{children}</SmoothScroll>
+      <body className={`${spaceGrotesk.variable} ${inter.variable} bg-background font-body-md text-on-surface selection:bg-primary-container selection:text-white antialiased transition-colors duration-500`}>
+        <ThemeProvider>
+          <ScrollProgress />
+          <CustomCursor />
+          <NoiseOverlay />
+          <BackgroundOrbs />
+          <SmoothScroll>{children}</SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

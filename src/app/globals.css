@@ -90,9 +90,26 @@
 }
 
 body {
-  background-color: #0A0A0B;
-  color: #e5e2e3;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+:root {
+  --color-background: #ffffff;
+  --color-on-surface: #131314;
+  --color-surface: #f5f5f5;
+  --color-surface-variant: #e0e0e0;
+  --color-on-surface-variant: #444444;
+}
+
+.dark {
+  --color-background: #0A0A0B;
+  --color-on-surface: #e5e2e3;
+  --color-surface: #131314;
+  --color-surface-variant: #353436;
+  --color-on-surface-variant: #d4c0d7;
 }
 
 .glass-card {
