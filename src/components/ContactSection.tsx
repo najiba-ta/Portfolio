@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionBackground from "./SectionBackground";
 
 export default function ContactSection() {
   return (
-    <section className="bg-transparent text-on-surface py-32 px-8 transition-colors duration-500" id="contact">
+    <section className="bg-transparent text-on-surface py-32 px-8 transition-colors duration-500 relative" id="contact">
+      <SectionBackground variant="primary" />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

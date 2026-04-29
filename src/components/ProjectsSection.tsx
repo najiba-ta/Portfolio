@@ -29,9 +29,12 @@ const projects = [
   }
 ];
 
+import SectionBackground from "./SectionBackground";
+
 export default function ProjectsSection() {
   return (
-    <section className="bg-transparent py-32 px-8 overflow-hidden transition-colors duration-500" id="projects">
+    <section className="bg-transparent py-32 px-8 overflow-hidden transition-colors duration-500 relative" id="projects">
+      <SectionBackground variant="secondary" />
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

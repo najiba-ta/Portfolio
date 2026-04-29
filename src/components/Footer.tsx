@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionBackground from "./SectionBackground";
 
 export default function Footer() {
   const containerVariants = {
@@ -18,6 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-transparent w-full border-t border-on-surface/5 pt-24 pb-8 relative overflow-hidden transition-colors duration-500">
+      <SectionBackground variant="minimal" />
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-[20vh] bg-primary-container/10 rounded-[100%] blur-[100px] pointer-events-none" />
 

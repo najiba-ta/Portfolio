@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useMouseTilt } from "@/hooks/useMouseTilt";
+import SectionBackground from "./SectionBackground";
 
 function ServiceCard({ 
   icon, 
@@ -96,6 +97,7 @@ export default function Services() {
 
   return (
     <section className="py-32 bg-transparent px-8 relative overflow-hidden transition-colors duration-500" id="services">
+      <SectionBackground variant="accent" />
       {/* Background depth layers */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden perspective-1000">
         <motion.div 

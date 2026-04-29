@@ -9,28 +9,23 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
-import GlassBackground from "@/components/GlassBackground";
-
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
         <Hero />
-        <div className="relative">
-          <GlassBackground />
-          <SectionDivider />
-          <About />
-          <SectionDivider />
-          <ProjectsSection />
-          <SectionDivider />
-          <Services />
-          <SectionDivider />
-          <ContactSection />
-          <CTA />
-          <FAQ />
-          <Footer />
-        </div>
+        <SectionDivider />
+        <About />
+        <SectionDivider />
+        <ProjectsSection />
+        <SectionDivider />
+        <Services />
+        <SectionDivider />
+        <ContactSection />
+        <CTA />
+        <FAQ />
+        <Footer />
       </main>
     </>
   );

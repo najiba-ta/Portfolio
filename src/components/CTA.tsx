@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SectionBackground from "./SectionBackground";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,6 +89,7 @@ export default function CTA() {
 
   return (
     <section ref={ctaRef} className="relative py-48 overflow-hidden bg-transparent flex items-center justify-center min-h-[80vh] transition-colors duration-500">
+      <SectionBackground variant="secondary" />
       <motion.div 
         initial={{ scale: 1.1, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 0.3 }}
