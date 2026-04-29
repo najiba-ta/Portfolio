@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
-    <section className="bg-background text-on-surface py-32 px-8 transition-colors duration-500" id="contact">
+    <section className="bg-transparent text-on-surface py-32 px-8 transition-colors duration-500" id="contact">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function ContactSection() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-4 group">
+            <a href="tel:01997182130" className="flex items-center gap-4 group w-fit">
               <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all duration-300">
                 <span className="material-symbols-outlined">call</span>
               </div>
@@ -39,9 +39,9 @@ export default function ContactSection() {
                 <p className="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Call me</p>
                 <p className="text-xl font-bold text-on-surface">01997182130</p>
               </div>
-            </div>
+            </a>
 
-            <div className="flex items-center gap-4 group">
+            <a href="mailto:shahidnajiba@gmail.com" className="flex items-center gap-4 group w-fit">
               <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all duration-300">
                 <span className="material-symbols-outlined">mail</span>
               </div>
@@ -49,7 +49,7 @@ export default function ContactSection() {
                 <p className="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Email me</p>
                 <p className="text-xl font-bold text-on-surface">shahidnajiba@gmail.com</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 

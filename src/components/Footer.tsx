@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-background w-full border-t border-on-surface/5 pt-24 pb-8 relative overflow-hidden transition-colors duration-500">
+    <footer className="bg-transparent w-full border-t border-on-surface/5 pt-24 pb-8 relative overflow-hidden transition-colors duration-500">
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-[20vh] bg-primary-container/10 rounded-[100%] blur-[100px] pointer-events-none" />
 

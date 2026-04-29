@@ -22,7 +22,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 bg-background px-8 transition-colors duration-500" id="faq">
+    <section className="py-32 bg-transparent px-8 transition-colors duration-500" id="faq">
       <div className="max-w-3xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

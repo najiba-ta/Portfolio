@@ -87,7 +87,7 @@ export default function CTA() {
   }, { scope: ctaRef });
 
   return (
-    <section ref={ctaRef} className="relative py-48 overflow-hidden bg-background flex items-center justify-center min-h-[80vh] transition-colors duration-500">
+    <section ref={ctaRef} className="relative py-48 overflow-hidden bg-transparent flex items-center justify-center min-h-[80vh] transition-colors duration-500">
       <motion.div 
         initial={{ scale: 1.1, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 0.3 }}

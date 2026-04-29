@@ -95,7 +95,7 @@ export default function Services() {
   };
 
   return (
-    <section className="py-32 bg-background px-8 relative overflow-hidden transition-colors duration-500" id="services">
+    <section className="py-32 bg-transparent px-8 relative overflow-hidden transition-colors duration-500" id="services">
       {/* Background depth layers */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden perspective-1000">
         <motion.div 
