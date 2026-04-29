@@ -29,6 +29,28 @@ export default function ContactSection() {
               <span className="text-on-surface-variant">Let&apos;s talk!</span>
             </h2>
           </div>
+
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all duration-300">
+                <span className="material-symbols-outlined">call</span>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Call me</p>
+                <p className="text-xl font-bold text-on-surface">01997182130</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all duration-300">
+                <span className="material-symbols-outlined">mail</span>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Email me</p>
+                <p className="text-xl font-bold text-on-surface">shahidnajiba@gmail.com</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Form */}
