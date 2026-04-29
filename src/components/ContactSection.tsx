@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
-    <section className="bg-black text-white py-32 px-8" id="contact">
+    <section className="bg-background text-on-surface py-32 px-8 transition-colors duration-500" id="contact">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,10 +23,10 @@ export default function ContactSection() {
             >
               Contacts
             </motion.span>
-            <h2 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase">
+            <h2 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase text-on-surface">
               Have a<br />
               project?<br />
-              <span className="text-zinc-500">Let&apos;s talk!</span>
+              <span className="text-on-surface-variant">Let&apos;s talk!</span>
             </h2>
           </div>
         </div>
@@ -35,35 +35,35 @@ export default function ContactSection() {
         <div className="flex flex-col justify-center">
           <form className="space-y-12">
             <div className="relative group">
-              <label className="absolute -top-6 left-0 text-zinc-500 text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
+              <label className="absolute -top-6 left-0 text-on-surface-variant text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
                 Name
               </label>
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full bg-transparent border-b-2 border-zinc-800 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-zinc-800 text-xl font-bold"
+                className="w-full bg-transparent border-b-2 border-on-surface/10 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-on-surface-variant/50 text-xl font-bold"
               />
             </div>
 
             <div className="relative group">
-              <label className="absolute -top-6 left-0 text-zinc-500 text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
+              <label className="absolute -top-6 left-0 text-on-surface-variant text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
                 Email
               </label>
               <input
                 type="email"
                 placeholder="Your@Email.com"
-                className="w-full bg-transparent border-b-2 border-zinc-800 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-zinc-800 text-xl font-bold"
+                className="w-full bg-transparent border-b-2 border-on-surface/10 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-on-surface-variant/50 text-xl font-bold"
               />
             </div>
 
             <div className="relative group">
-              <label className="absolute -top-6 left-0 text-zinc-500 text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
+              <label className="absolute -top-6 left-0 text-on-surface-variant text-xs uppercase tracking-widest font-bold group-focus-within:text-orange-500 transition-colors">
                 Message
               </label>
               <textarea
                 placeholder="What's on your mind?"
                 rows={4}
-                className="w-full bg-transparent border-b-2 border-zinc-800 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-zinc-800 text-xl font-bold resize-none"
+                className="w-full bg-transparent border-b-2 border-on-surface/10 py-4 focus:border-orange-500 outline-none transition-all duration-500 placeholder:text-on-surface-variant/50 text-xl font-bold resize-none"
               />
 
               <div>

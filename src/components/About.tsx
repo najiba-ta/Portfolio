@@ -79,7 +79,10 @@ export default function About() {
   ];
 
   return (
-    <section ref={containerRef} className="py-32 relative bg-surface-container-lowest bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] bg-repeat" id="about">
+    <section ref={containerRef} className="py-32 relative bg-surface overflow-hidden" id="about">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] bg-repeat opacity-50" />
+      
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
         <div className="lg:col-span-5 flex justify-center">
           <motion.div
@@ -89,20 +92,21 @@ export default function About() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full"
           >
-            <Image
-              src="/najiba.png"
-              alt="Najiba"
-              width={420}
-              height={420}
-              className="rounded-2xl object-cover"
-            />
-
+            <div className="relative aspect-square max-w-[420px] mx-auto">
+              <Image
+                src="/najiba.png"
+                alt="Najiba"
+                fill
+                className="rounded-2xl object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 rounded-2xl border border-on-surface/10" />
+            </div>
           </motion.div>
         </div>
 
-        <div ref={textRef} className="lg:col-span-7 space-y-12">
+        <div ref={textRef} className="lg:col-span-7 space-y-12 text-on-surface">
           <div>
-            <h2 className="font-h2 text-h1 mb-6 reveal-line overflow-hidden pb-2">About Me</h2>
+            <h2 className="font-h2 text-h1 mb-6 reveal-line overflow-hidden pb-2 text-on-surface">About Me</h2>
             <div className="font-body-lg text-body-lg text-on-surface-variant space-y-2">
               <p className="reveal-line overflow-hidden pb-1">I am Najiba Takarrum, a passionate Frontend Web Developer specialized</p>
               <p className="reveal-line overflow-hidden pb-1">in building highly interactive and performant user interfaces.</p>
@@ -112,7 +116,7 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className="font-h3 text-h3 mb-6 flex items-center gap-3 reveal-line overflow-hidden pb-1">
+            <h3 className="font-h3 text-h3 mb-6 flex items-center gap-3 reveal-line overflow-hidden pb-1 text-on-surface">
               <span className="material-symbols-outlined text-primary">terminal</span>
               My Tech Stack
             </h3>
@@ -126,17 +130,17 @@ export default function About() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-50px" }}
                   whileHover={{ y: -5, scale: 1.05, borderColor: "rgba(189, 0, 255, 0.5)" }}
-                  className="glass-card px-4 py-3 rounded-xl flex items-center gap-3 border border-white/5 cursor-default transition-colors"
+                  className="glass-card px-4 py-3 rounded-xl flex items-center gap-3 border dark:border-white/5 border-black/5 cursor-default transition-colors"
                 >
                   <span className="material-symbols-outlined text-primary">{item.icon}</span>
-                  <span className="font-label-sm text-white">{item.name}</span>
+                  <span className="font-label-sm text-on-surface">{item.name}</span>
                 </motion.div>
               ))}
             </div>
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-h3 text-h3 flex items-center gap-3 reveal-line overflow-hidden pb-1">
+            <h3 className="font-h3 text-h3 flex items-center gap-3 reveal-line overflow-hidden pb-1 text-on-surface">
               <span className="material-symbols-outlined text-primary">work</span>
               Experience
             </h3>
@@ -146,10 +150,10 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex justify-between items-center p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
+                className="flex justify-between items-center p-6 rounded-2xl bg-on-surface/5 border border-on-surface/5 hover:bg-on-surface/10 transition-colors group"
               >
                 <div>
-                  <h4 className="font-bold text-white group-hover:text-primary transition-colors">Frontend Developer</h4>
+                  <h4 className="font-bold text-on-surface group-hover:text-primary transition-colors">Frontend Developer</h4>
                   <p className="text-on-surface-variant text-sm"></p>
                 </div>
                 <span className="text-primary font-mono text-sm">2026 — Present</span>

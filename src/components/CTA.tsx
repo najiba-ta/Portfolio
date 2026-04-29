@@ -87,7 +87,7 @@ export default function CTA() {
   }, { scope: ctaRef });
 
   return (
-    <section ref={ctaRef} className="relative py-48 overflow-hidden bg-black flex items-center justify-center min-h-[80vh]">
+    <section ref={ctaRef} className="relative py-48 overflow-hidden bg-background flex items-center justify-center min-h-[80vh] transition-colors duration-500">
       <motion.div 
         initial={{ scale: 1.1, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 0.3 }}
@@ -98,7 +98,7 @@ export default function CTA() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt="Workspace Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover dark:opacity-50 opacity-80"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2YuwREfGjnjGxxkVKftAeZkBlnm2BgSMsHwOj3YA7F3eOmimEBV1UHhc77H4AkF12URvBABGyZgzu_3i00XtwKqdmMPrCTummpt9OnE0_pPmbQgN1whkQ2MO_5q_3orOjBZOZbqn3C3hWd7mMa4JCvZgaASBJUrYgSZ3ccoDopFCZpYDCx_FTvswRXgPSHGWibcIWC0YiVt7SPyDmvNZf5itSE1bmMrdb6pJZrnlUlQqVRBbg8NJ1zPkWfASt1qdFOtXrgdDvJw"
         />
       </motion.div>
@@ -107,9 +107,9 @@ export default function CTA() {
       <motion.div 
         animate={{ 
           background: [
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(189,0,255,0.1) 50%, rgba(0,0,0,1) 100%)",
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(255,138,0,0.05) 50%, rgba(0,0,0,1) 100%)",
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(189,0,255,0.1) 50%, rgba(0,0,0,1) 100%)"
+            "linear-gradient(to bottom, var(--color-background) 0%, rgba(189,0,255,0.05) 50%, var(--color-background) 100%)",
+            "linear-gradient(to bottom, var(--color-background) 0%, rgba(255,138,0,0.03) 50%, var(--color-background) 100%)",
+            "linear-gradient(to bottom, var(--color-background) 0%, rgba(189,0,255,0.05) 50%, var(--color-background) 100%)"
           ] 
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" as const }}
@@ -119,7 +119,7 @@ export default function CTA() {
       <FloatingParticles />
       
       <div className="relative z-10 max-w-7xl mx-auto px-8 text-center space-y-12">
-        <h2 ref={headingRef} className="font-display text-[10vw] md:text-[6vw] leading-none text-white tracking-tighter" style={{ clipPath: "inset(100% 0 0 0)" }}>
+        <h2 ref={headingRef} className="font-display text-[10vw] md:text-[6vw] leading-none text-on-surface tracking-tighter" style={{ clipPath: "inset(100% 0 0 0)" }}>
           Transforming Ideas<br/>Into Reality
         </h2>
         <motion.p 
@@ -139,7 +139,7 @@ export default function CTA() {
         >
           <motion.button 
             animate={{
-              boxShadow: ["0 0 0px rgba(255,138,0,0)", "0 0 40px rgba(255,138,0,0.6)", "0 0 0px rgba(255,138,0,0)"]
+              boxShadow: ["0 0 0px rgba(255,138,0,0)", "0 0 40px rgba(255,138,0,0.4)", "0 0 0px rgba(255,138,0,0)"]
             }}
             transition={{ duration: 2.5, repeat: Infinity }}
             whileHover={{ scale: 1.05 }}

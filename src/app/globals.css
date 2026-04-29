@@ -113,17 +113,28 @@ body {
 }
 
 .glass-card {
-  background: rgba(22, 22, 24, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.dark .glass-card {
+  background: rgba(22, 22, 24, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .glass-card:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.dark .glass-card:hover {
   background: rgba(22, 22, 24, 0.6);
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
 }
 
 .text-gradient-purple {

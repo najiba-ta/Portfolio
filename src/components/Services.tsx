@@ -52,12 +52,12 @@ function ServiceCard({
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const }}
           className="w-14 h-14 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors duration-500"
         >
-          <span className="material-symbols-outlined text-primary group-hover:text-white" style={{ fontVariationSettings: "'FILL' 1" }}>
+          <span className="material-symbols-outlined text-primary group-hover:text-white dark:group-hover:text-black" style={{ fontVariationSettings: "'FILL' 1" }}>
             {icon}
           </span>
         </motion.div>
-        <h3 className="font-h3 text-h3 mb-4 transition-colors group-hover:text-primary-fixed">{title}</h3>
-        <p className="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white">
+        <h3 className="font-h3 text-h3 mb-4 transition-colors text-on-surface group-hover:text-primary">{title}</h3>
+        <p className="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-on-surface">
           {desc}
         </p>
       </div>
@@ -95,13 +95,13 @@ export default function Services() {
   };
 
   return (
-    <section className="py-32 bg-surface px-8 relative overflow-hidden" id="services">
+    <section className="py-32 bg-background px-8 relative overflow-hidden transition-colors duration-500" id="services">
       {/* Background depth layers */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden perspective-1000">
         <motion.div 
           animate={{ translateZ: [-100, -50, -100], rotateZ: [0, 5, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" as const }}
-          className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border border-white/5 rounded-full"
+          className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border border-on-surface/5 rounded-full"
         />
       </div>
 
@@ -113,7 +113,7 @@ export default function Services() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-20 space-y-4"
         >
-          <h2 className="font-display text-h1">Building Innovative Web Solutions</h2>
+          <h2 className="font-display text-h1 text-on-surface">Building Innovative Web Solutions</h2>
           <p className="text-on-surface-variant font-body-lg max-w-2xl mx-auto">
             Providing a comprehensive suite of digital services designed to elevate your brand and optimize your digital presence.
           </p>

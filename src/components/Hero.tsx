@@ -56,11 +56,11 @@ export default function Hero() {
             alt="Developer Background" 
             fill
             priority
-            className="object-cover opacity-90"
+            className="object-cover opacity-90 dark:opacity-60"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/10 via-zinc-950/40 to-zinc-950 backdrop-blur-[1px] z-10" />
-        <div className="absolute inset-0 bg-white/[0.01] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-white/[0.01] dark:bg-black/[0.01] z-10" />
         <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] z-20" />
       </motion.div>
 
@@ -71,12 +71,12 @@ export default function Hero() {
           animate="visible"
           className="space-y-8 md:max-w-2xl"
         >
-          <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+          <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-            <span className="text-label-sm font-label-sm text-white/60 uppercase tracking-widest">Available for hire</span>
+            <span className="text-label-sm font-label-sm dark:text-white/60 text-black/60 uppercase tracking-widest">Available for hire</span>
           </motion.div>
 
-          <h1 className="font-display text-display leading-none">
+          <h1 className="font-display text-display leading-none text-on-surface">
             <SplitText text="Hi, I'm" variants={charVariants} />{" "}
             <span className="inline-block relative">
               <motion.span
@@ -101,7 +101,7 @@ export default function Hero() {
               <span className="material-symbols-outlined relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
             </button>
-            <button data-cursor="Open" className="bg-white/5 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
+            <button data-cursor="Open" className="bg-black/5 dark:bg-white/5 backdrop-blur-sm border border-black/10 dark:border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-black/10 dark:hover:bg-white/10 transition-all">
               Hire Me
             </button>
           </motion.div>
@@ -120,7 +120,7 @@ export default function Hero() {
                 rel={social.url.startsWith("mailto") ? undefined : "noopener noreferrer"}
                 whileHover={{ scale: 1.2, color: social.color }}
                 whileTap={{ scale: 0.9 }}
-                className="text-white/40 text-2xl transition-colors duration-300"
+                className="dark:text-white/40 text-black/40 text-2xl transition-colors duration-300"
                 data-cursor="Open"
               >
                 {social.icon}
@@ -136,10 +136,10 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">Scroll</span>
-        <div className="w-[1px] h-12 bg-white/10 overflow-hidden relative">
+        <span className="text-[10px] uppercase tracking-[0.2em] dark:text-white/50 text-black/50">Scroll</span>
+        <div className="w-[1px] h-12 dark:bg-white/10 bg-black/10 overflow-hidden relative">
           <motion.div 
-            className="w-full h-full bg-white origin-top"
+            className="w-full h-full dark:bg-white bg-black origin-top"
             animate={{ y: ["-100%", "100%"] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "circInOut" as const }}
           />

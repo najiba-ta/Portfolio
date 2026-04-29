@@ -22,13 +22,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 bg-surface px-8" id="faq">
+    <section className="py-32 bg-background px-8 transition-colors duration-500" id="faq">
       <div className="max-w-3xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-h1 text-center mb-16"
+          className="font-display text-h1 text-center mb-16 text-on-surface"
         >
           Frequently Asked Questions
         </motion.h2>
@@ -46,10 +46,10 @@ export default function FAQ() {
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full p-6 flex justify-between items-center cursor-pointer text-left focus:outline-none"
               >
-                <span className="font-bold text-white">{faq.question}</span>
+                <span className="font-bold text-on-surface">{faq.question}</span>
                 <motion.span 
                   animate={{ rotate: openIndex === idx ? 180 : 0 }}
-                  className="material-symbols-outlined text-white/70"
+                  className="material-symbols-outlined text-on-surface-variant"
                 >
                   expand_more
                 </motion.span>
@@ -62,7 +62,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" as const }}
                   >
-                    <div className="px-6 pb-6 text-on-surface-variant text-sm border-t border-white/5 pt-4">
+                    <div className="px-6 pb-6 text-on-surface-variant text-sm border-t border-on-surface/5 pt-4">
                       {faq.answer}
                     </div>
                   </motion.div>

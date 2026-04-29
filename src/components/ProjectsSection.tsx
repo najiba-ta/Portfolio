@@ -31,7 +31,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="bg-[#0B0F1A] py-32 px-8 overflow-hidden" id="projects">
+    <section className="bg-background py-32 px-8 overflow-hidden transition-colors duration-500" id="projects">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8, ease: "easeOut" as const }}
           className="text-center mb-24"
         >
-          <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">Projects</h2>
+          <h2 className="text-5xl md:text-7xl font-black text-on-surface uppercase tracking-tighter">Projects</h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mt-6"></div>
         </motion.div>
 
@@ -64,12 +64,12 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none uppercase">
+                  <h3 className="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-none uppercase">
                     {project.title}
                   </h3>
                 </div>
                 
-                <p className="text-zinc-400 text-lg leading-relaxed max-w-xl">
+                <p className="text-on-surface-variant text-lg leading-relaxed max-w-xl">
                   {project.description}
                 </p>
 
@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                   </motion.a>
                   <a 
                     href={project.link} 
-                    className="text-white hover:text-orange-500 transition-colors font-bold flex items-center gap-2 group text-sm uppercase tracking-widest"
+                    className="text-on-surface hover:text-orange-500 transition-colors font-bold flex items-center gap-2 group text-sm uppercase tracking-widest"
                   >
                     View project 
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  className="rounded-[2.5rem] overflow-hidden border-4 border-white/5 shadow-2xl relative z-10"
+                  className="rounded-[2.5rem] overflow-hidden border-4 border-on-surface/5 shadow-2xl relative z-10"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
