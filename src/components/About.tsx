@@ -96,18 +96,7 @@ export default function About() {
               height={420}
               className="rounded-2xl object-cover"
             />
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 1, ease: "easeOut" as const }}
-              className="absolute -bottom-4 -right-4 glass-card p-6 rounded-2xl border border-primary-container/30 z-20 shadow-2xl"
-            >
-              <div className="text-primary font-display text-h1 flex items-baseline">
-                <AnimatedCounter from={0} to={3} />+
-              </div>
-              <div className="text-white/60 font-label-sm text-label-sm uppercase mt-1">Years Experience</div>
-            </motion.div>
+
           </motion.div>
         </div>
 
