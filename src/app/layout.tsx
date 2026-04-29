@@ -4,7 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
-import BackgroundOrbs from "@/components/BackgroundOrbs";
+
 import ScrollProgress from "@/components/ScrollProgress";
 
 const spaceGrotesk = Space_Grotesk({
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
+import GlobalBackground from "@/components/GlassBackground";
 
 export default function RootLayout({
   children,
@@ -39,7 +40,7 @@ export default function RootLayout({
           <ScrollProgress />
           <CustomCursor />
           <NoiseOverlay />
-          <BackgroundOrbs />
+          <GlobalBackground />
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>
       </body>

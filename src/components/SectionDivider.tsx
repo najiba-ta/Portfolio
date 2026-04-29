@@ -10,7 +10,7 @@ export default function SectionDivider() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.5, ease: "circInOut" as const }}
-        className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent origin-left"
+        className="w-full h-[1px] bg-gradient-to-r from-transparent via-on-surface/10 to-transparent origin-left"
       />
     </div>
   );
