@@ -45,13 +45,23 @@ export default function Hero() {
   };
 
   return (
-    <header ref={containerRef} className="relative min-h-screen flex items-center pt-24 overflow-hidden perspective-1000 bg-transparent">
+    <header ref={containerRef} className="relative min-h-screen flex items-center pt-24 overflow-hidden perspective-1000">
       <motion.div 
         style={{ y: bgY }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-transparent backdrop-blur-[2px] z-10" />
-        <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] z-20 animate-pulse" />
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/hero-bg.jpg" 
+            alt="Developer Background" 
+            fill
+            priority
+            className="object-cover opacity-90 dark:opacity-60"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background backdrop-blur-[1px] z-10" />
+        <div className="absolute inset-0 bg-white/[0.01] dark:bg-black/[0.01] z-10" />
+        <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] z-20" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-8 w-full relative z-30 flex flex-col md:flex-row items-center justify-between min-h-[80vh]">

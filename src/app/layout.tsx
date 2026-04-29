@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
-import GlobalBackground from "@/components/GlassBackground";
+import BackgroundOrbs from "@/components/BackgroundOrbs";
 
 export default function RootLayout({
   children,
@@ -40,7 +40,7 @@ export default function RootLayout({
           <ScrollProgress />
           <CustomCursor />
           <NoiseOverlay />
-          <GlobalBackground />
+          <BackgroundOrbs />
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>
       </body>
