@@ -97,7 +97,7 @@ export default function About() {
                 src="/najiba.png"
                 alt="Najiba"
                 fill
-                className="rounded-2xl object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="rounded-2xl object-cover transition-all duration-700"
               />
               <div className="absolute inset-0 rounded-2xl border border-on-surface/10" />
             </div>
