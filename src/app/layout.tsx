@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..0&display=swap" />
       </head>
       <body className={`${spaceGrotesk.variable} ${inter.variable} bg-background font-body-md text-on-surface selection:bg-primary-container selection:text-white antialiased transition-colors duration-500`}>
         <ThemeProvider>

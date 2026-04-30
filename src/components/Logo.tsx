@@ -16,7 +16,7 @@ export default function Logo() {
         <defs>
           <linearGradient id="nt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#bd00ff" />
-            <stop offset="100%" stopColor="#ff8a00" />
+            <stop offset="100%" stopColor="#00D1FF" />
           </linearGradient>
           <filter id="logo-blur">
             <feGaussianBlur stdDeviation="1.5" result="blur" />
@@ -47,7 +47,7 @@ export default function Logo() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           x="63.5" y="71" width="8" height="8" rx="2" 
-          fill="#ff8a00" 
+          fill="#00D1FF" 
           className="animate-pulse"
         />
       </svg>

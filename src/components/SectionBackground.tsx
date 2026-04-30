@@ -11,7 +11,7 @@ export default function SectionBackground({ variant = "primary", className = "" 
   const getGlowColor = () => {
     switch (variant) {
       case "secondary": return "bg-secondary-container/10";
-      case "accent": return "bg-orange-500/5";
+      case "accent": return "bg-cyan-500/5";
       case "minimal": return "bg-primary-container/5";
       default: return "bg-primary-container/10";
     }
@@ -73,7 +73,7 @@ export default function SectionBackground({ variant = "primary", className = "" 
       )}
 
       {/* Frosted Glass Overlay - Core Aesthetic */}
-      <div className="absolute inset-0 bg-background/30 dark:bg-background/60 backdrop-blur-[8px]" />
+      <div className="absolute inset-0 bg-background/15 dark:bg-background/60 backdrop-blur-[8px]" />
       
       {/* Noise Texture */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />

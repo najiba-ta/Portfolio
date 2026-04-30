@@ -91,7 +91,7 @@ export default function CustomCursor() {
         }}
         variants={variants}
         animate={cursorVariant}
-        transition={{ type: "tween", ease: [0.34, 1.56, 0.64, 1] as const, duration: 0.3 }}
+        transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
       >
         {cursorVariant === "text" && (
           <motion.span 

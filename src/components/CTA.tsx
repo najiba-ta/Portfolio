@@ -127,7 +127,7 @@ export default function CTA() {
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: [0.33, 1, 0.68, 1] as const }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           className="text-on-surface-variant text-h3 font-body-lg max-w-2xl mx-auto"
         >
@@ -141,16 +141,16 @@ export default function CTA() {
         >
           <motion.button 
             animate={{
-              boxShadow: ["0 0 0px rgba(255,138,0,0)", "0 0 40px rgba(255,138,0,0.4)", "0 0 0px rgba(255,138,0,0)"]
+              boxShadow: ["0 0 0px rgba(0,209,255,0)", "0 0 50px rgba(0,209,255,0.3)", "0 0 0px rgba(0,209,255,0)"]
             }}
-            transition={{ duration: 2.5, repeat: Infinity }}
-            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#00E5FF" }}
             whileTap={{ scale: 0.95 }}
             data-cursor="Open"
-            className="bg-[#FF8A00] text-black px-12 py-6 rounded-2xl font-bold text-xl transition-transform relative overflow-hidden group"
+            className="bg-[#00D1FF] text-black px-12 py-6 rounded-2xl font-bold text-xl transition-all relative overflow-hidden group"
           >
             <span className="relative z-10">Let&apos;s Get Started</span>
-            <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0 rounded-2xl"></div>
           </motion.button>
         </motion.div>
       </div>

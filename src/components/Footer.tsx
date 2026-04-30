@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import SectionBackground from "./SectionBackground";
 
 export default function Footer() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -12,7 +12,7 @@ export default function Footer() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
   };
@@ -28,9 +28,9 @@ export default function Footer() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="max-w-7xl mx-auto px-8 flex flex-col items-center gap-16 relative z-10"
+        className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center gap-16 relative z-10"
       >
-        <motion.div variants={itemVariants} className="text-4xl md:text-8xl font-black tracking-tighter text-on-surface uppercase opacity-80 mix-blend-screen dark:mix-blend-screen">
+        <motion.div variants={itemVariants} className="text-3xl sm:text-4xl md:text-8xl font-black tracking-tighter text-on-surface uppercase opacity-80 mix-blend-screen dark:mix-blend-screen text-center break-words w-full">
           NAJIBA TAKARRUM
         </motion.div>
         
@@ -54,10 +54,17 @@ export default function Footer() {
             <motion.a 
               key={i}
               data-cursor="View"
-              whileHover={{ scale: 1.2, rotate: 10, y: -5 }}
+              whileHover={{ 
+                scale: 1.1, 
+                rotate: 5, 
+                y: -5,
+                backgroundColor: i === 0 ? "#1877F220" : i === 1 ? "#bd00ff20" : "#EA433520",
+                borderColor: i === 0 ? "#1877F240" : i === 1 ? "#bd00ff40" : "#EA433540"
+              }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="w-16 h-16 rounded-full border border-on-surface/10 bg-on-surface/5 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:border-primary-container hover:bg-primary-container/20 transition-colors" 
+              className="w-16 h-16 rounded-2xl border border-on-surface/10 bg-on-surface/5 backdrop-blur-sm flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all duration-300" 
+              style={{ color: i === 0 ? "#1877F2" : i === 1 ? "#bd00ff" : "#EA4335" }}
               href="#"
             >
               <span className="material-symbols-outlined text-3xl">{icon}</span>

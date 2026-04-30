@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useMouseTilt } from "@/hooks/useMouseTilt";
 import SectionBackground from "./SectionBackground";
 
@@ -76,7 +76,7 @@ export default function Services() {
     { icon: "database", title: "Full-Stack Integration", desc: "Connecting frontend excellence with MongoDB databases to create robust, data-driven applications within the MERN ecosystem." },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -84,19 +84,19 @@ export default function Services() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50, scale: 0.9, filter: "blur(10px)" },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       filter: "blur(0px)",
-      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const },
+      transition: { duration: 1.2, ease: "easeOut" },
     },
   };
 
   return (
-    <section className="py-32 bg-transparent px-8 relative overflow-hidden transition-colors duration-500" id="services">
+    <section className="py-32 bg-transparent px-4 md:px-8 relative overflow-hidden transition-colors duration-500" id="services">
       <SectionBackground variant="accent" />
       {/* Background depth layers */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden perspective-1000">
@@ -112,7 +112,7 @@ export default function Services() {
           initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-20 space-y-4"
         >
           <h2 className="font-display text-h1 text-on-surface">Building Innovative Web Solutions</h2>

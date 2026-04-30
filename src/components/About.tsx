@@ -1,36 +1,13 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { useRef } from "react";
+import { motion, Variants } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import SectionBackground from "./SectionBackground";
 gsap.registerPlugin(ScrollTrigger);
-
-function AnimatedCounter({ from, to }: { from: number; to: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-  const motionValue = useMotionValue(from);
-  const springValue = useSpring(motionValue, { duration: 2000, bounce: 0 });
-
-  useEffect(() => {
-    if (inView) {
-      motionValue.set(to);
-    }
-  }, [inView, motionValue, to]);
-
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US", { minimumIntegerDigits: 2 }).format(Math.floor(latest));
-      }
-    });
-  }, [springValue]);
-
-  return <span ref={ref}>{from}</span>;
-}
 
 export default function About() {
   const containerRef = useRef<HTMLElement>(null);
@@ -57,7 +34,7 @@ export default function About() {
     }
   }, { scope: containerRef });
 
-  const pillVariants = {
+  const pillVariants: Variants = {
     hidden: { opacity: 0, scale: 0.5, y: 20 },
     visible: (i: number) => ({
       opacity: 1,
@@ -65,7 +42,7 @@ export default function About() {
       y: 0,
       transition: {
         delay: i * 0.1 + 0.5,
-        type: "spring" as const,
+        type: "spring",
         stiffness: 200,
         damping: 12
       }
@@ -85,13 +62,13 @@ export default function About() {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDIiLz4KPC9zdmc+')] bg-repeat opacity-50" />
       
-      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
         <div className="lg:col-span-5 flex justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="relative w-full"
           >
             <div className="relative aspect-square max-w-[420px] mx-auto">

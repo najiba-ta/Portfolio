@@ -1,12 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { SplitText } from "@/utils/splitText";
-import { useMouseTilt } from "@/hooks/useMouseTilt";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,17 +15,17 @@ export default function Hero() {
   const bgY = useTransform(scrollY, [0, 1000], [0, 300]);
 
 
-  const charVariants = {
+  const charVariants: Variants = {
     hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
     visible: { 
       opacity: 1, 
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const }
+      transition: { duration: 1.2, ease: "easeOut" }
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -34,13 +33,13 @@ export default function Hero() {
     }
   };
 
-  const fadeUpVariant = {
+  const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30, filter: "blur(5px)" },
     visible: { 
       opacity: 1, 
       y: 0, 
       filter: "blur(0px)",
-      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as const } 
+      transition: { duration: 1.2, ease: "easeOut" } 
     }
   };
 
@@ -64,19 +63,19 @@ export default function Hero() {
         <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] z-20" />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-8 w-full relative z-30 flex flex-col md:flex-row items-center justify-between min-h-[80vh]">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full relative z-30 flex flex-col md:flex-row items-center justify-between min-h-[80vh] gap-12 md:gap-0">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8 md:max-w-2xl"
+          className="space-y-6 md:space-y-8 md:max-w-2xl text-center md:text-left"
         >
           <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-            <span className="text-label-sm font-label-sm dark:text-white/60 text-black/60 uppercase tracking-widest">Available for hire</span>
+            <span className="text-[10px] md:text-label-sm font-label-sm dark:text-white/60 text-black/60 uppercase tracking-widest">Available for hire</span>
           </motion.div>
 
-          <h1 className="font-display text-display leading-none text-on-surface">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-display leading-[1.1] text-on-surface tracking-tighter">
             <SplitText text="Hi, I'm" variants={charVariants} />{" "}
             <span className="inline-block relative">
               <motion.span
@@ -87,26 +86,36 @@ export default function Hero() {
                 Najiba
               </motion.span>
             </span>
-            ,<br />
+            ,<br className="hidden md:block" />
             <SplitText text="Frontend Developer" variants={charVariants} />
           </h1>
 
-          <motion.p variants={fadeUpVariant} className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+          <motion.p variants={fadeUpVariant} className="font-body-lg text-base md:text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
             Specializing in high-performance React and Next.js applications. Transforming complex requirements into elegant, interactive frontend solutions.
           </motion.p>
 
-          <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 pt-4">
-            <button data-cursor="View" className="bg-[#FF8A00] text-black px-8 py-4 rounded-xl font-bold text-lg transition-transform hover:scale-105 flex items-center gap-2 group relative overflow-hidden">
+          <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+            <motion.button 
+              data-cursor="View" 
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 209, 255, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-cyan-500 text-black px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg flex items-center gap-2 group relative overflow-hidden transition-colors"
+            >
               <span className="relative z-10">Projects</span>
-              <span className="material-symbols-outlined relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
-            </button>
-            <button data-cursor="Open" className="bg-black/5 dark:bg-white/5 backdrop-blur-sm border border-black/10 dark:border-white/10 text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-black/10 dark:hover:bg-white/10 transition-all">
+              <span className="material-symbols-outlined relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-xl md:text-2xl">arrow_outward</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+            </motion.button>
+            <motion.button 
+              data-cursor="Open" 
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 209, 255, 0.1)", borderColor: "rgba(0, 209, 255, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-black/5 dark:bg-white/5 backdrop-blur-sm border border-black/10 dark:border-white/10 text-on-surface px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg transition-all"
+            >
               Hire Me
-            </button>
+            </motion.button>
           </motion.div>
 
-          <motion.div variants={fadeUpVariant} className="flex items-center gap-6 pt-4">
+          <motion.div variants={fadeUpVariant} className="flex items-center gap-4 md:gap-6 pt-4 justify-center md:justify-start">
             {[
               { icon: <FaFacebookF />, url: "https://www.facebook.com/najibatakarrum", color: "#1877F2" },
               { icon: <FaInstagram />, url: "https://www.instagram.com/naju_is_here", color: "#E4405F" },
@@ -118,12 +127,20 @@ export default function Hero() {
                 href={social.url}
                 target={social.url.startsWith("mailto") ? undefined : "_blank"}
                 rel={social.url.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                whileHover={{ scale: 1.2, color: social.color }}
-                whileTap={{ scale: 0.9 }}
-                className="dark:text-white/40 text-black/40 text-2xl transition-colors duration-300"
+                whileHover={{ 
+                  scale: 1.1,
+                  backgroundColor: `${social.color}20`,
+                  borderColor: `${social.color}40`,
+                  boxShadow: `0 0 20px ${social.color}30`
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-white/5 dark:bg-white/5 backdrop-blur-sm border border-white/10 dark:border-white/10 transition-all duration-300 group"
+                style={{ color: social.color }}
                 data-cursor="Open"
               >
-                {social.icon}
+                <div className="group-hover:scale-110 transition-transform duration-300 text-sm md:text-base">
+                  {social.icon}
+                </div>
               </motion.a>
             ))}
           </motion.div>

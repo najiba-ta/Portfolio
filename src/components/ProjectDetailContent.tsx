@@ -4,15 +4,15 @@ import { Project } from "@/utils/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionBackground from "@/components/SectionBackground";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function ProjectDetailContent({ project }: { project: Project }) {
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
@@ -21,7 +21,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
       <main className="min-h-screen pt-32 pb-20 overflow-hidden relative">
         <SectionBackground variant="primary" />
 
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           {/* Back Button */}
           <Link
             href="/#projects"
@@ -40,7 +40,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
               className="space-y-8"
             >
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-black text-on-surface uppercase tracking-tighter leading-none">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-on-surface uppercase tracking-tighter leading-none">
                   {project.title}
                 </h1>
                 <div className="flex flex-wrap gap-2">
@@ -52,7 +52,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
                 </div>
               </div>
 
-              <p className="text-xl text-on-surface-variant leading-relaxed">
+              <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed">
                 {project.fullDescription}
               </p>
 
@@ -79,7 +79,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
             <motion.div
               initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border-4 border-on-surface/5 shadow-2xl"
             >
               <Image
@@ -100,10 +100,10 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="glass-card p-10 rounded-3xl space-y-6"
+              className="glass-card p-6 md:p-10 rounded-3xl space-y-6"
             >
               <h2 className="text-3xl font-black uppercase tracking-tight flex items-center gap-3">
-                <span className="material-symbols-outlined text-orange-500">warning</span>
+                <span className="material-symbols-outlined text-cyan-500">warning</span>
                 Challenges Faced
               </h2>
               <ul className="space-y-4">
@@ -122,7 +122,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="glass-card p-10 rounded-3xl space-y-6"
+              className="glass-card p-6 md:p-10 rounded-3xl space-y-6"
             >
               <h2 className="text-3xl font-black uppercase tracking-tight flex items-center gap-3">
                 <span className="material-symbols-outlined text-green-500">rocket_launch</span>

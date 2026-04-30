@@ -25,7 +25,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 bg-transparent px-8 transition-colors duration-500 relative" id="faq">
+    <section className="py-32 bg-transparent px-4 md:px-8 transition-colors duration-500 relative" id="faq">
       <SectionBackground variant="minimal" />
       <div className="max-w-3xl mx-auto">
         <motion.h2 
