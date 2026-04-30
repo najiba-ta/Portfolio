@@ -20,11 +20,11 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
       <Navbar />
       <main className="min-h-screen pt-32 pb-20 overflow-hidden relative">
         <SectionBackground variant="primary" />
-        
+
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           {/* Back Button */}
-          <Link 
-            href="/#projects" 
+          <Link
+            href="/#projects"
             className="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors mb-12 group"
           >
             <span className="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
@@ -33,7 +33,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
 
           {/* Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <motion.div 
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeUp}
@@ -51,13 +51,13 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
                   ))}
                 </div>
               </div>
-              
+
               <p className="text-xl text-on-surface-variant leading-relaxed">
                 {project.fullDescription}
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a 
+                <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
                 >
                   <FaExternalLinkAlt /> Live Demo
                 </a>
-                <a 
+                <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -76,14 +76,14 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border-4 border-on-surface/5 shadow-2xl"
             >
-              <Image 
-                src={project.img} 
+              <Image
+                src={project.img}
                 alt={project.title}
                 fill
                 className="object-cover"
@@ -92,10 +92,10 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
             </motion.div>
           </div>
 
-          {/* Details Sections */}
+          {/* Details Sectio */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Challenges */}
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -117,7 +117,7 @@ export default function ProjectDetailContent({ project }: { project: Project }) 
             </motion.div>
 
             {/* Future Plans */}
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
