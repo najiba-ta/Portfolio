@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function BackgroundOrbs() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden bg-background">
+    <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
       <motion.div
         animate={{
           x: ["-20%", "20%", "-20%"],

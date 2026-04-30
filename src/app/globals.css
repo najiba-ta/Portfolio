@@ -110,6 +110,16 @@ body {
   --color-surface: #131314;
   --color-surface-variant: #353436;
   --color-on-surface-variant: #d4c0d7;
+  
+  --glass-bg: rgba(10, 10, 11, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur: 8px;
+}
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-blur: 8px;
 }
 
 .glass-card {

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Logo from "./Logo";
 import { useTheme } from "./ThemeProvider";
 import { FaSun, FaMoon } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,13 +31,15 @@ export default function Navbar() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </div>
       <div className="hidden md:flex items-center gap-10 relative">
-        <a className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/90 text-black/90 hover:text-primary transition-colors" href="#projects">Projects</a>
-        <a className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="#services">Services</a>
-        <a className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="#about">About</a>
-        <a className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="#faq">FAQ</a>
+        <Link className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/90 text-black/90 hover:text-primary transition-colors" href="/#projects">Projects</Link>
+        <Link className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="/#services">Services</Link>
+        <Link className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="/#about">About</Link>
+        <Link className="font-sans tracking-tight text-xs uppercase font-bold dark:text-white/40 text-black/40 hover:text-white dark:hover:text-white hover:text-black transition-colors" href="/#faq">FAQ</Link>
       </div>
       <div className="flex items-center gap-3">
         <button 

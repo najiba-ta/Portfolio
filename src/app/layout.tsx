@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import BackgroundOrbs from "@/components/BackgroundOrbs";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
           <ScrollProgress />
           <CustomCursor />
           <NoiseOverlay />
+          <AnimatedBackground />
           <BackgroundOrbs />
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>

@@ -1,33 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const projects = [
-  {
-    title: "EcoSphere Dashboard",
-    tags: ["React", "Next.js", "JavaScript"],
-    description: "A high-performance monitoring dashboard featuring real-time data visualization and interactive components built with React and Framer Motion.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuC7pUGLfPfHqfLTEvdNwk48f5g6Itj__jJSzteDfD-7nq8PD-o1N4KWcsZRHpQMrLkDuLKNBgcUPsR2wcdElpw3AQHWbIbXD0UtwxcqSrqjzALboVIr2snLtLnJnmjaB4zg85NalUkY66-qfQsTeX8oiPT7CyT-M_cljTu2qVvLzsiAE_yAzK1UqSSTVXSm8C80rFdXXhqP_uqHKeFlONMeJCv5fa1R00nvHJ1pLuoMBXIMtI610_5h2VyXQi401TJbye_eij_0GA",
-    github: "https://github.com/najiba-ta",
-    link: "#"
-  },
-  {
-    title: "NeuroConnect Social",
-    tags: ["Next.js", "MongoDB", "Tailwind"],
-    description: "A social networking platform optimized for speed and accessibility, leveraging Next.js for server-side rendering and MongoDB for scalable data storage.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDdWvkxn3RKsz9DyalJVQt4_lEFe-VVJ8Kg2u4pzS9iyfcR41lfKr_aXEs3KbZGLDbYVJNibsExx-W4AsGD3Z4TtwKHw9m7seQ5A9-CGEb66yUv1PJRd2sFFtU18tvqtwacbiHrh71R5Z3jPeSLDLHBEPDpnD7jYG7D-R5BVyJ2ZseFMWVtA3UZaX3LsDXqe2wZhyBtqcjApEku9o0D0Kj1gBJruCnx8RJ0Ytr8VL41jCCXVINY3asw7lQ-k1HhgJHR4dHP1CT63w",
-    github: "https://github.com/najiba-ta",
-    link: "#"
-  },
-  {
-    title: "Lumina Commerce",
-    tags: ["React", "JavaScript", "Context API"],
-    description: "A modern e-commerce interface focusing on smooth user journeys, complex state management, and optimized asset loading for a premium shopping experience.",
-    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB2YuwREfGjnjGxxkVKftAeZkBlnm2BgSMsHwOj3YA7F3eOmimEBV1UHhc77H4AkF12URvBABGyZgzu_3i00XtwKqdmMPrCTummpt9OnE0_pPmbQgN1whkQ2MO_5q_3orOjBZOZbqn3C3hWd7mMa4JCvZgaASBJUrYgSZ3ccoDopFCZpYDCx_FTvswRXgPSHGWibcIWC0YiVt7SPyDmvNZf5itSE1bmMrdb6pJZrnlUlQqVRBbg8NJ1zPkWfASt1qdFOtXrgdDvJw",
-    github: "https://github.com/najiba-ta",
-    link: "#"
-  }
-];
+import { PROJECTS } from "@/utils/projects";
+import Link from "next/link";
 
 import SectionBackground from "./SectionBackground";
 
@@ -48,7 +23,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="space-y-32 md:space-y-48">
-          {projects.map((project, idx) => (
+          {PROJECTS.map((project, idx) => (
             <motion.div 
               key={idx}
               initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
@@ -87,13 +62,13 @@ export default function ProjectsSection() {
                   >
                     View Github
                   </motion.a>
-                  <a 
-                    href={project.link} 
+                  <Link 
+                    href={`/projects/${project.id}`} 
                     className="text-on-surface hover:text-orange-500 transition-colors font-bold flex items-center gap-2 group text-sm uppercase tracking-widest"
                   >
-                    View project 
+                    View Details 
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
 

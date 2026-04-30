@@ -73,7 +73,7 @@ export default function SectionBackground({ variant = "primary", className = "" 
       )}
 
       {/* Frosted Glass Overlay - Core Aesthetic */}
-      <div className="absolute inset-0 bg-background/40 dark:bg-background/80 backdrop-blur-[100px]" />
+      <div className="absolute inset-0 bg-background/30 dark:bg-background/60 backdrop-blur-[8px]" />
       
       {/* Noise Texture */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
