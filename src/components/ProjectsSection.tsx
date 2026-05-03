@@ -51,7 +51,31 @@ export default function ProjectsSection() {
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-8 pt-4">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-8 pt-4">
+                  <motion.a 
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ 
+                      scale: 1.05, 
+                      boxShadow: "0 0 25px rgba(189, 0, 255, 0.5)",
+                      backgroundColor: "var(--color-primary-container)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-primary-container text-white font-bold px-8 py-4 rounded-xl transition-all text-sm uppercase tracking-widest inline-flex items-center gap-2 relative overflow-hidden group/live"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      Live Site
+                      <span className="material-symbols-outlined text-[18px] group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5 transition-transform duration-300">open_in_new</span>
+                    </span>
+                    <motion.div 
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
+                      className="absolute inset-0 bg-white/20 skew-x-12 z-0"
+                    />
+                  </motion.a>
+
                   <motion.a 
                     href={project.github}
                     target="_blank"
